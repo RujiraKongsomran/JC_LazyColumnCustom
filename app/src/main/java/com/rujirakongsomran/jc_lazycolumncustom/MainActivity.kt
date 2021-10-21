@@ -1,12 +1,14 @@
 package com.rujirakongsomran.jc_lazycolumncustom
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
@@ -42,7 +44,8 @@ class MainActivity : ComponentActivity() {
             contentPadding = PaddingValues(all = 12.dp),
             verticalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            items(items = getAllData) { person ->
+            itemsIndexed(items = getAllData) { index, person ->
+                Log.d("MainActivity", index.toString())
                 CustomItem(person = person)
             }
         }
