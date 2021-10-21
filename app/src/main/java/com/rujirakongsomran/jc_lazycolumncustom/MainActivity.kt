@@ -46,7 +46,7 @@ class MainActivity : ComponentActivity() {
         ) {
             itemsIndexed(items = getAllData) { index, person ->
                 Log.d("MainActivity", index.toString())
-                CustomItem(person = person)
+                CustomProfile(person = person)
             }
         }
     }
